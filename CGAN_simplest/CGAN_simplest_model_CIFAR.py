@@ -156,6 +156,8 @@ class Discriminator(nn.Module):
         
         # Output layer
         self.output_layer = nn.Linear(2*4*4*512, 1)
+        # TODO:
+        # add sigmoid???
         
     def forward(self, img, labels):
         # Process image

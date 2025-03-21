@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 
 # Constants
 BATCH_SIZE = 64
-IMAGE_SIZE = 28  # We'll keep this for consistency, but resize the 28x28 images
+IMAGE_SIZE = 28
 LATENT_DIM = 100
 NUM_CLASSES = 10  # FashionMNIST also has 10 classes
 LR = 0.0002
@@ -78,6 +78,8 @@ class Generator(nn.Module):
             nn.BatchNorm2d(128),
             nn.ReLU(True),
             
+            # TODO: więcej warstw
+
             # 14x14x128 -> 28x28x1 (final output layer now produces 28x28 images)
             nn.ConvTranspose2d(128, 1, kernel_size=4, stride=2, padding=1,
                                bias=False),
